@@ -1,0 +1,526 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ACT Now Cloud | Launch Your Tech Career</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+
+body{
+background:#f7f9fc;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+background:#0d1b3d;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+header img{
+height:45px;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* BUTTONS */
+
+.header-buttons{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.btn{
+padding:8px 16px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+}
+
+.whatsapp-btn{
+background:#22c55e;
+}
+
+.call-btn{
+background:#2563eb;
+}
+
+/* LOGIN */
+
+.login-container{
+position:relative;
+}
+
+.login-btn{
+background:#f59e0b;
+border:none;
+cursor:pointer;
+color:white;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+right:0;
+top:40px;
+background:white;
+min-width:180px;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+border-radius:6px;
+overflow:hidden;
+}
+
+.dropdown button{
+width:100%;
+padding:12px;
+border:none;
+background:white;
+text-align:left;
+cursor:pointer;
+}
+
+.dropdown button:hover{
+background:#f3f4f6;
+}
+
+.show{
+display:block;
+}
+
+/* HERO */
+
+.hero{
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(to right,#0b132b,#1f3b88);
+color:white;
+}
+
+.hero h2{
+font-size:44px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px;
+}
+
+.cta-btn{
+background:#ff7a18;
+padding:14px 26px;
+border-radius:6px;
+text-decoration:none;
+color:white;
+margin:10px;
+display:inline-block;
+}
+
+/* SECTION */
+
+.section{
+padding:70px 8%;
+text-align:center;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:40px;
+}
+
+/* CARDS */
+
+.programs{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:28px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.feature{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* PROCESS */
+
+.process{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.step{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* FORM */
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,select{
+padding:12px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+form button{
+padding:14px;
+background:#ff7a18;
+border:none;
+color:white;
+border-radius:6px;
+font-weight:bold;
+}
+
+/* MAP */
+
+iframe{
+border-radius:10px;
+}
+
+/* CTA */
+
+.cta{
+background:#0a2540;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0d1b3d;
+color:white;
+padding:40px 20px;
+text-align:center;
+line-height:1.8;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-floating{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<img src="actNowLogo.png" alt="ACT Logo">
+
+<nav>
+
+<a href="#">Programs</a>
+<a href="#">Placements</a>
+<a href="#">Community</a>
+<a href="#">Contact</a>
+
+</nav>
+
+<div class="header-buttons">
+
+<a href="https://wa.me/919000950022" class="btn whatsapp-btn">WhatsApp</a>
+
+<a href="tel:+919000950022" class="btn call-btn">Call</a>
+
+<div class="login-container">
+
+<button class="btn login-btn" onclick="toggleLogin()">Login ▾</button>
+
+<div id="loginMenu" class="dropdown">
+
+<button onclick="adminLogin()">Admin Login</button>
+<button onclick="studentLogin()">Student Login</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h2>Launch Your Tech Career</h2>
+
+<p>Industry-focused training programs designed to make students job-ready.</p>
+
+<a class="cta-btn" href="#">Start Learning</a>
+<a class="cta-btn" href="#">Book Free Consultation</a>
+
+</section>
+
+
+<section class="section">
+
+<h2>Our Career Programs</h2>
+
+<div class="programs">
+
+<div class="card">
+<h3>Java Full Stack</h3>
+<p>Spring Boot, Microservices and real-world backend development.</p>
+</div>
+
+<div class="card">
+<h3>Python Full Stack</h3>
+<p>Django, APIs and scalable web applications.</p>
+</div>
+
+<div class="card">
+<h3>Data Science & AI</h3>
+<p>Machine Learning and Deep Learning projects.</p>
+</div>
+
+<div class="card">
+<h3>AWS + DevOps</h3>
+<p>Docker, Kubernetes and CI/CD pipelines.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Why Choose ACT Now Cloud</h2>
+
+<div class="features">
+
+<div class="feature">Industry Expert Trainers</div>
+<div class="feature">Real-Time Projects</div>
+<div class="feature">Mock Interviews</div>
+<div class="feature">Placement Assistance</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>How We Make You Job Ready</h2>
+
+<div class="process">
+
+<div class="step">
+<h3>1. Learn Fundamentals</h3>
+<p>Strong programming foundation.</p>
+</div>
+
+<div class="step">
+<h3>2. Build Projects</h3>
+<p>Create real-world applications.</p>
+</div>
+
+<div class="step">
+<h3>3. Interview Preparation</h3>
+<p>DSA, coding tests and mock interviews.</p>
+</div>
+
+<div class="step">
+<h3>4. Get Placed</h3>
+<p>Resume building and placement support.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Request a Free Career Consultation</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
+
+<select>
+<option>Select Course</option>
+<option>Java Full Stack</option>
+<option>Python Full Stack</option>
+<option>Data Science</option>
+<option>AWS DevOps</option>
+</select>
+
+<button type="submit">Request Callback</button>
+
+</form>
+
+</section>
+
+
+<section class="section">
+
+<h2>Find Us</h2>
+
+<iframe
+src="https://maps.google.com/maps?q=KPHB%20Metro%20Station%20Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350">
+</iframe>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Become a Software Engineer in 6 Months</h2>
+
+<p>Learn industry skills, build real projects and get placement support.</p>
+
+<a class="cta-btn" href="#">Enroll Now</a>
+
+</section>
+
+
+<footer>
+
+<h3>Get in Touch</h3>
+
+<p>📞 9000950022</p>
+
+<p>📧 info@alladicloudtraining.com</p>
+
+<p>
+Pillar No. 771, Near KPHB Metro<br>
+Alladi Cloud Training<br>
+Hyderabad, Telangana 500072
+</p>
+
+<p>© 2026 ACT Now Cloud</p>
+
+</footer>
+
+
+<a class="whatsapp-floating" href="https://wa.me/919000950022">
+Chat on WhatsApp
+</a>
+
+
+<script>
+
+function toggleLogin(){
+document.getElementById("loginMenu").classList.toggle("show");
+}
+
+function adminLogin(){
+window.location.href="https://www.actnowcloud.com/#/actnowcloud/login";
+}
+
+function studentLogin(){
+window.location.href="https://www.actnowcloud.com/#/actnowcloud/student-login";
+}
+
+window.onclick=function(event){
+if(!event.target.matches('.login-btn')){
+var dropdown=document.getElementById("loginMenu");
+if(dropdown.classList.contains('show')){
+dropdown.classList.remove('show');
+}
+}
+}
+
+</script>
+
+</body>
+</html>
+```
