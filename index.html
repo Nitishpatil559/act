@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alladi Coding & Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0b132b;color:white;scroll-behavior:smooth;overflow-x:hidden;}
+
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#0b132b;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+.loader-circle{
+width:50px;
+height:50px;
+border:5px solid #1f3b88;
+border-top:5px solid #60a5fa;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:#0d1b3d;
+position:fixed;
+width:100%;
+z-index:1000;
+transition:0.3s;
+}
+header.shrink{
+padding:10px 60px;
+background:#091024;
+}
+header img{height:48px;}
+.header-buttons{display:flex;gap:12px;}
+.btn{
+padding:9px 16px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:white;
+transition:0.3s;
+}
+.btn:hover{transform:scale(1.05);}
+.whatsapp-btn{background:#22c55e;}
+.call-btn{background:#2563eb;}
+
+/* HERO */
+.hero{
+padding:160px 20px 100px;
+text-align:center;
+background:linear-gradient(to right,#0b132b,#1f3b88);
+}
+.hero h1{font-size:46px;margin-bottom:15px;}
+.hero p{opacity:0.9;font-size:18px;margin-bottom:30px;}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+.stat-number{
+font-size:42px;
+font-weight:700;
+color:#60a5fa;
+}
+.stat-label{margin-top:8px;}
+
+/* SECTIONS */
+.section{
+padding:80px 30px;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
+}
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+.section h2{margin-bottom:30px;}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+.card{
+background:#1c2541;
+padding:20px 28px;
+border-radius:10px;
+min-width:220px;
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+background:#2563eb;
+}
+
+/* CAMPUS */
+.campus-section{
+padding:80px 30px;
+background:linear-gradient(to right,#0b132b,#1f3b88);
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
+}
+.campus-section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.timeline{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:35px;
+}
+.stage-card{
+background:#1c2541;
+padding:22px;
+border-radius:10px;
+width:240px;
+transition:0.3s;
+}
+.stage-card:hover{
+transform:translateY(-8px);
+background:#2563eb;
+}
+.stage-number{
+font-size:24px;
+font-weight:700;
+color:#60a5fa;
+margin-bottom:8px;
+}
+
+/* FUNNEL */
+.funnel{margin:30px auto;max-width:480px;}
+.funnel-step{
+background:#1c2541;
+padding:8px;
+margin:6px auto;
+border-radius:6px;
+width:80%;
+font-size:14px;
+}
+.funnel-step:nth-child(2){width:65%;}
+.funnel-step:nth-child(3){width:50%;}
+.final-step{width:35%;background:#2563eb;}
+
+/* PATH */
+.path-split{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+.path-card{
+background:#1c2541;
+padding:20px;
+border-radius:10px;
+width:260px;
+transition:0.3s;
+}
+.path-card:hover{
+transform:translateY(-8px);
+background:#2563eb;
+}
+
+/* REVIEWS */
+.review-gallery{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+.review-gallery img{
+width:280px;
+border-radius:10px;
+transition:0.3s;
+}
+.review-gallery img:hover{
+transform:scale(1.05);
+}
+
+/* RATINGS */
+.ratings-container{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+.rating-box{
+background:#1c2541;
+padding:22px;
+border-radius:10px;
+width:230px;
+transition:0.3s;
+}
+.rating-box:hover{
+transform:translateY(-8px);
+background:#2563eb;
+}
+.stars{color:#facc15;font-size:18px;margin:8px 0;}
+
+/* FORM */
+.lead-form{
+padding:80px 20px;
+text-align:center;
+}
+.lead-form form{max-width:450px;margin:auto;}
+.lead-form input,
+.lead-form select{
+width:100%;
+padding:11px;
+margin-bottom:12px;
+border-radius:6px;
+border:none;
+}
+.lead-form button{
+width:100%;
+padding:12px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+font-weight:600;
+transition:0.3s;
+}
+.lead-form button:hover{background:#1d4ed8;}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:35px 20px;
+background:#0d1b3d;
+}
+
+/* FLOATING */
+.whatsapp-floating{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#22c55e;
+color:white;
+padding:10px 16px;
+border-radius:30px;
+text-decoration:none;
+font-size:14px;
+}
+.apply-bar{
+position:fixed;
+bottom:0;
+width:100%;
+background:#2563eb;
+text-align:center;
+padding:12px;
+font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+header{padding:15px 20px;}
+.stats{gap:40px;}
+.hero h1{font-size:34px;}
+.card{min-width:100%;}
+.stage-card{width:100%;}
+.path-card{width:100%;}
+.rating-box{width:100%;}
+.review-gallery img{width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader"><div class="loader-circle"></div></div>
+
+<header id="navbar">
+<img src="actNowLogo.png" alt="Logo">
+<div class="header-buttons">
+<a href="https://wa.me/919000950022" class="btn whatsapp-btn">WhatsApp</a>
+<a href="tel:+919000950022" class="btn call-btn">Call</a>
+</div>
+</header>
+
+<section class="hero">
+<h1>Alladi Coding & Technologies</h1>
+<p>Industry Ready IT Training with Real Project Exposure</p>
+<div class="stats">
+<div><div class="stat-number">120</div><div class="stat-label">Projects</div></div>
+<div><div class="stat-number">850</div><div class="stat-label">Students Trained</div></div>
+<div><div class="stat-number">300</div><div class="stat-label">Opportunities</div></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Our Career Programs</h2>
+<div class="cards">
+<div class="card">Java Full Stack</div>
+<div class="card">Python Full Stack</div>
+<div class="card">AWS Cloud</div>
+<div class="card">DevOps</div>
+</div>
+</section>
+
+<section class="campus-section">
+<h2>Campus to Job – Structured Selection Framework</h2>
+<div class="timeline">
+<div class="stage-card"><div class="stage-number">01</div>Academic Eligibility<br>Minimum 80% in academics.</div>
+<div class="stage-card"><div class="stage-number">02</div>Assessment & Technical<br>80% Aptitude & Communication + Technical Round.</div>
+<div class="stage-card"><div class="stage-number">03</div>Project Selection<br>Work on real-time ACS projects.</div>
+</div>
+
+<div class="funnel">
+<div class="funnel-step">All Enrolled Students</div>
+<div class="funnel-step">Eligible Candidates</div>
+<div class="funnel-step">Assessment Qualified</div>
+<div class="funnel-step final-step">Campus to Job Selected</div>
+</div>
+
+<div class="path-split">
+<div class="path-card">Direct Path<br>Join ACS real-time projects directly.</div>
+<div class="path-card">Internship Path<br>Internship → Performance → Permanent Role.</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Verified Student Reviews</h2>
+<div class="review-gallery">
+<img src="google-review1.jpeg">
+<img src="google-review2.jpeg">
+<img src="justdial-review1.jpeg">
+</div>
+</section>
+
+<section class="section">
+<h2>Student Testimonials & Ratings</h2>
+<p>"Real-time exposure gave me confidence to crack interviews."</p>
+<p>"Strict evaluation improved my technical discipline."</p>
+
+<div class="ratings-container">
+<div class="rating-box">
+Google Rating
+<div class="stars">★★★★★</div>
+5.0 Rating
+</div>
+<div class="rating-box">
+Justdial Rating
+<div class="stars">★★★★★</div>
+5.0 Rating
+</div>
+</div>
+</section>
+
+<section class="lead-form">
+<h2>Apply Now</h2>
+<form action="https://formspree.io/f/xpwonvqg" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<select name="course">
+<option>Java Full Stack</option>
+<option>Python Full Stack</option>
+<option>AWS Cloud</option>
+<option>DevOps</option>
+</select>
+<button type="submit">Submit Application</button>
+</form>
+</section>
+
+<footer>
+Pillar No. 771, Near KPHB Metro, Hyderabad - 500072<br>
+Phone: +91-9000950022<br>
+Email: info@alladicloudsolutions.com<br>
+© 2025 Alladi Coding & Technologies
+</footer>
+
+<a class="whatsapp-floating" href="https://wa.me/919000950022">WhatsApp</a>
+<div class="apply-bar">Apply Now – Limited Seats Available</div>
+
+<script>
+/* Loader */
+window.addEventListener("load",function(){
+document.getElementById("loader").style.display="none";
+});
+
+/* Navbar Shrink */
+window.addEventListener("scroll",function(){
+document.getElementById("navbar").classList.toggle("shrink",window.scrollY>50);
+});
+
+/* Reveal Animation */
+const sections=document.querySelectorAll('.section,.campus-section');
+window.addEventListener('scroll',()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add('show');
+}
+});
+});
+
+/* Counter Animation */
+const counters=document.querySelectorAll('.stat-number');
+counters.forEach(counter=>{
+const updateCount=()=>{
+const target=+counter.innerText;
+let count=0;
+const increment=target/100;
+const interval=setInterval(()=>{
+count+=increment;
+if(count>=target){
+counter.innerText=target+"+";
+clearInterval(interval);
+}else{
+counter.innerText=Math.floor(count);
+}
+},20);
+};
+updateCount();
+});
+</script>
+
+</body>
+</html>
